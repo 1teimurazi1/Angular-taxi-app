@@ -1,0 +1,13 @@
+:host{
+    height: 100%;
+    min-height: fit-content;
+}
+.table-wrapper{
+    height: max-content;
+    width: 70%;
+    min-width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 22px;
+    margin-bottom: 44px;
+}

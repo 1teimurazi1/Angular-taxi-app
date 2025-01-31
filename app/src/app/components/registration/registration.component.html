@@ -1,0 +1,101 @@
+<div class="registration-wrapper">
+  <form class="registration-form" [formGroup]="form">
+    <p-card header="Register as {{ type }}">
+      <div class="input-row">
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <input pInputText id="firstName" formControlName="firstName" />
+            <label for="firstName">First Name</label>
+          </p-floatLabel>
+        </div>
+
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <input pInputText id="lastName" formControlName="lastName" />
+            <label for="lastName">Last Name</label>
+          </p-floatLabel>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <p-inputMask
+              id="phoneNumber"
+              formControlName="phoneNumber"
+              mask="(999) 999-99-99-99"
+              [unmask]="true"
+            />
+            <label for="phoneNumber">Phone Number</label>
+          </p-floatLabel>
+        </div>
+
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <input pInputText id="email" formControlName="email" />
+            <label for="email">Email</label>
+          </p-floatLabel>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <p-password id="password" formControlName="password" />
+            <label for="password">Password</label>
+          </p-floatLabel>
+        </div>
+
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <p-password
+              id="confirmPassword"
+              formControlName="confirmPassword"
+              [feedback]="false"
+            />
+            <label for="confirmPassword">Confirm Password</label>
+          </p-floatLabel>
+        </div>
+      </div>
+
+      @if (type == 'driver') {
+      <div class="input-row">
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <p-cascadeSelect
+              formControlName="carModel"
+              [options]="carModels"
+              optionLabel="cname"
+              optionGroupLabel="name"
+              [optionGroupChildren]="['brands', 'models']"
+              [style]="{ width: '12.5rem' }"
+              placeholder="Select a City"
+            />
+            <label for="carModel">Car Model</label>
+          </p-floatLabel>
+        </div>
+
+        <div class="input-wrapper">
+          <p-floatLabel>
+            <p-inputMask
+              id="plateNumber"
+              formControlName="plateNumber"
+              mask="aa-999-aa"
+              [unmask]="true"
+            />
+            <label for="plateNumber">Plate Number</label>
+          </p-floatLabel>
+        </div>
+      </div>
+      }
+
+      <div class="input-wrapper">
+        <p-button
+          (onClick)="onSubmit()"
+          [disabled]="!form.valid"
+          label="Register"
+        />
+      </div>
+    </p-card>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+@import "primeicons/primeicons.css";
+@import "app/assets/theme.scss";
+@import "primeng/resources/primeng.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "app/assets/leaflet-routing-machine.css";
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}

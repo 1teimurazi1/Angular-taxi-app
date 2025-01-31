@@ -1,0 +1,30 @@
+:host{
+    height: 100%;
+    min-height: fit-content;
+}
+.my-orders-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: fit-content;
+    margin: 1rem;
+}
+.orders-item-wrapper{
+    width: 80%;
+    min-width: min-content;
+    margin-right: auto;
+    margin-left: auto;
+    height: fit-content;
+}
+
+.map-display{
+    margin: auto;
+    width: 850px;
+    height: 400px;
+}
+.button-wrapper{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 12px;
+}

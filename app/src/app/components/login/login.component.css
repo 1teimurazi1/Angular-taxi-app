@@ -1,0 +1,19 @@
+.login-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+form{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--secondary-color);
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+.input-wrapper{
+    margin-top: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    width: min-content;
+}

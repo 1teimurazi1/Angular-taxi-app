@@ -1,0 +1,39 @@
+.registration-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+form{
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--secondary-color);
+    margin-top: 44px;
+    margin-bottom: 44px;
+}
+fieldset{
+    width: max-content;
+    height: min-content;
+    background-color: inherit;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input-wrapper{
+    margin-top: 28px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 6px;
+    padding-left: 6px;
+}
+.input-wrapper:first-child{
+    padding-right: 24px;
+}
+.input-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: max-content;
+}

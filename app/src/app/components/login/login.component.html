@@ -1,0 +1,32 @@
+<div class="login-wrapper">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p-card header="Login">
+      <div class="input-wrapper">
+        <p-floatLabel>
+          <input pInputText type="text" id="email" formControlName="email" />
+          <label for="email">Email</label>
+        </p-floatLabel>
+      </div>
+
+      <div class="input-wrapper">
+        <p-floatLabel>
+          <input
+            pInputText
+            type="text"
+            id="password"
+            formControlName="password"
+          />
+          <label for="password">Password</label>
+        </p-floatLabel>
+      </div>
+
+      <div class="input-wrapper">
+        <p-button
+          (onClick)="onSubmit()"
+          [disabled]="!form.valid"
+          label="Login"
+        />
+      </div>
+    </p-card>
+  </form>
+</div>

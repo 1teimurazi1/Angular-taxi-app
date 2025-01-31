@@ -1,0 +1,16 @@
+:host{
+    height: 100%;
+    min-height: fit-content;
+}
+.new-driver{
+    background-color: cyan;
+}
+.table-container{
+    height: max-content;
+    width: 75%;
+    min-width: min-content;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 22px;
+    margin-bottom: 44px;
+}

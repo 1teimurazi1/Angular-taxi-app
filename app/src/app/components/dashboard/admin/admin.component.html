@@ -1,0 +1,71 @@
+<div class="admin-wrapper">
+  <div class="table-container">
+    <p-table
+      dataKey="id"
+      [value]="drivers"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Car Model</th>
+          <th>Car Plate</th>
+          <th>Driving</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-driver>
+        <tr>
+          <td>
+            {{ driver.id }}
+          </td>
+          <td>
+            {{ driver.firstName }}
+          </td>
+          <td>
+            {{ driver.lastName }}
+          </td>
+          <td>
+            {{ driver.email }}
+          </td>
+          <td>
+            {{ driver.phoneNumber }}
+          </td>
+          <td>
+            {{ driver.carModel }}
+          </td>
+          <td>
+            {{ driver.plateNumber }}
+          </td>
+          <td>
+            @if (driver.currOrderID) {
+            <p-tag severity="success" value="True" /> } @else {
+            <p-tag severity="danger" value="False" />
+            }
+          </td>
+          <td>
+            @if (driver.status == 'active') {
+            <p-tag icon="pi pi-check" severity="success" value="Active" /> }
+            @else {
+            <p-tag icon="pi pi-times" severity="danger" value="Inactive" />
+            }
+          </td>
+          <td>
+            <p-button
+              (click)="toggleDriver(driver)"
+              [label]="driver.status == 'active' ? 'Deactivate' : 'Activate'"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

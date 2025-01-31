@@ -1,0 +1,52 @@
+<div class="my-orders-wrapper">
+  @if (currentOrder != null) {
+  <div class="orders-item-wrapper">
+    <p-card header="Ride in progress...">
+      <div class="map-display">
+        <app-map
+          [isStatic]="true"
+          [defaultMarkers]="[
+            [currentOrder.originLat, currentOrder.originLng],
+            [currentOrder.destinationLat, currentOrder.destinationLng]
+          ]"
+        />
+      </div>
+
+      @if (isDriver) {
+      <div class="button-wrapper">
+        <p-button (click)="onOrderCompleted()" label="Complete" />
+      </div>
+      }
+      <p-divider align="center">
+        <b>Orders</b>
+      </p-divider>
+    </p-card>
+  </div>
+  }
+
+  <div class="orders-item-wrapper">
+    <p-table
+      dataKey="id"
+      [value]="filteredOrdersList()"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Price</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-order>
+        <tr>
+          <td>{{ order.id }}</td>
+          <td>{{ order.price.toFixed(2) }}₾</td>
+          <td>{{ order.status }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="header-wrapper">
+  <div class="logo-container">
+    <a [routerLink]="['']">
+      <p-button rounded="true" size="large" raised="true" label="MrOTAD" />
+    </a>
+  </div>
+
+  <div class="user-container">
+    @if (isLoggedIn) {
+    <a [routerLink]="['']" (click)="logout()"
+      ><p-button rounded="true" size="large" label="Logout"
+    /></a>
+    } @else {
+    <a [routerLink]="['/login']"
+      ><p-button rounded="true" size="large" label="Login"
+    /></a>
+    }
+  </div>
+</div>

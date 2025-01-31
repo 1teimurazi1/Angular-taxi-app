@@ -1,0 +1,65 @@
+<div class="ride-request-wrapper">
+  @if (hasOrder) {
+  <div class="order-container">
+    <div class="order-wrapper">
+      <p-card header="Ride in progress...">
+        <div class="loading-wrapper">
+          <p-progressSpinner ariaLabel="loading" />
+        </div>
+      </p-card>
+    </div>
+  </div>
+  }
+
+  <div class="map-display">
+    <app-map (onPointChanged)="updatePosition($event)" />
+  </div>
+
+  <div class="ride-details">
+    <p-card header="Request Ride">
+      <div class="position-picker">
+        <form [formGroup]="formGroups[0]">
+          <p-floatLabel>
+            <input
+              pInputText
+              id="coords"
+              formControlName="coords"
+              value="{{ formGroups[0].get('coords')?.value }}"
+            />
+            <label for="coords">From</label>
+          </p-floatLabel>
+        </form>
+      </div>
+      <div class="position-picker">
+        <form [formGroup]="formGroups[1]">
+          <p-floatLabel>
+            <input
+              pInputText
+              id="coords"
+              formControlName="coords"
+              value="{{ formGroups[1].value.coords }}"
+            />
+            <label for="coords">To</label>
+          </p-floatLabel>
+        </form>
+      </div>
+
+      <div class="button-container">
+        <p-button
+          [disabled]="!this.currentLocation"
+          [loading]="!this.currentLocation"
+          (click)="setSelfPosition(0)"
+          label="From my location"
+        />
+      </div>
+      <div class="button-container">
+        <p-button
+          [loading]="confirmLoading"
+          [disabled]="routeDistance <= 0 || routeTime <= 0"
+          (click)="onConfirm()"
+          label="Confirm {{ (routeDistance * currentFare).toFixed(2) }}₾"
+        />
+      </div>
+    </p-card>
+  </div>
+</div>

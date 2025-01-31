@@ -1,0 +1,28 @@
+$colorPallete1: #e3e5e4;
+$colorPallete2: #1a2a43;
+$colorPallete3: #9fadb8;
+
+$primaryColor: #1a2a43 !default;
+$primaryDarkColor: rgb(23, 72, 163) !default;
+$primaryDarkerColor: rgb(13, 49, 126) !default;
+$primaryTextColor: #e3e5e4 !default;
+
+$highlightBg: $primaryColor !default;
+$highlightTextColor: $primaryTextColor !default;
+$highlightFocusBg: darken($primaryColor, .08) !default;
+
+
+$containerHeaderBorderColor: #c8c8c8 !default;
+$containerHeaderBorder: 1px solid $containerHeaderBorderColor !default;
+$containerHeaderBg: #f4f4f4 !default;
+$containerHeaderTextColor: #333333 !default;
+$containerHeaderIconColor: #848484 !default;
+$containerHeaderIconHoverColor: #333333 !default;
+
+@import '../../../node_modules/primeng-sass-theme/themes/nova/nova/theme.scss';
+
+:root{
+    --primary-color: #{$colorPallete2};
+    --secondary-color: #{$colorPallete1};
+    --background-color: #{$colorPallete3};
+}

@@ -1,0 +1,42 @@
+<div class="check-requests-wrapper">
+  <div class="table-wrapper">
+    <p-table
+      [loading]="loading"
+      dataKey="id"
+      [value]="currInfos"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[5, 10, 20]"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Destination</th>
+          <th pSortableColumn="distance">
+            Distance <p-sortIcon field="distance" />
+          </th>
+          <th pSortableColumn="price">Price <p-sortIcon field="price" /></th>
+          <th>Actions</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-order>
+        <tr>
+          <td>
+            {{
+              "Lat: " + order.destinationLat + " Lng: " + order.destinationLng
+            }}
+          </td>
+          <td>{{ (order.distance / 1000).toFixed(2) }}KM</td>
+          <td>{{ order.price.toFixed(2) }}₾</td>
+          <td>
+            <p-button
+              (click)="acceptDrive(order.id)"
+              [disabled]="hasOrder"
+              label="Accept"
+            />
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="homepage-wrapper">
+  <div class="homepage-block welcome-container">
+    <h3 class="welcome-msg" style="font-size: 42px; font-weight: 300">
+      Welcome To Our
+    </h3>
+    <h1 class="welcome-msg" style="font-size: 86px; font-weight: 800">
+      Taxi Service
+    </h1>
+
+    <hr />
+  </div>
+
+  <div class="homepage-block registration-container">
+    <div class="reg-container passenger">
+      <a [routerLink]="['/register', 'passenger']">
+        <p-button
+          size="large"
+          severity="primary"
+          label="Register as Passenger"
+          [style]="{ width: '15rem' }"
+          [raised]="true"
+        />
+      </a>
+    </div>
+
+    <hr />
+
+    <div class="reg-container driver">
+      <a [routerLink]="['/register', 'driver']">
+        <p-button
+          size="large"
+          severity="secondary"
+          label="Register as Driver"
+          [style]="{ width: '15rem' }"
+          [raised]="true"
+        />
+      </a>
+    </div>
+  </div>
+</div>

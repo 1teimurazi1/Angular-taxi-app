@@ -1,0 +1,62 @@
+.homepage-wrapper{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.homepage-block{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+
+    display: flex;
+    margin-top: 44px;
+}
+
+.welcome-container{
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.welcome-container hr{
+    width: 100%;
+    color: var(--secondary-color);
+    border-style: dashed;
+    border-width: 2px;
+}
+.welcome-msg{
+    width: max-content;
+    margin: auto;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+}
+
+.registration-container hr{
+    height: 100%;
+    color: var(--primary-color);
+    border-style: dashed;
+    border-width: 1px;
+    margin: 0px;
+    padding: 0px;
+}
+.registration-container a{
+    margin: auto;
+}
+.registration-container{
+    border-radius: 12px;
+    background-color: var(--secondary-color);
+    width: 35%;
+    min-height: min-content;
+    min-width: max-content;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+.reg-container{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
